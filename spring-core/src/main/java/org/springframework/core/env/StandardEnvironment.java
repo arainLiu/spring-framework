@@ -61,6 +61,8 @@ public class StandardEnvironment extends AbstractEnvironment {
 
 
 	/**
+	 * propertySources中添加默认的systemEnvironment和systemProperties
+	 *
 	 * Customize the set of property sources with those appropriate for any standard
 	 * Java environment:
 	 * <ul>

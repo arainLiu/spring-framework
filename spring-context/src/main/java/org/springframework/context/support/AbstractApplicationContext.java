@@ -532,11 +532,12 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		synchronized (this.startupShutdownMonitor) {
 			// Prepare this context for refreshing.
 			/**
-			 * 容器刷新前的准备工作，
-			 * 1. 设置容器的启动时间
-			 * 2. 设置容器的活跃状态为true
-			 * 3. 设置容器的关闭状态为false
-			 *
+			 * 前戏，做容器刷新前的准备工作
+			 * 1、设置容器的启动时间
+			 * 2、设置活跃状态为true
+			 * 3、设置关闭状态为false
+			 * 4、获取Environment对象，并加载当前系统的属性值到Environment对象中
+			 * 5、准备监听器和事件的集合对象，默认为空的集合
 			 */
 			prepareRefresh();
 

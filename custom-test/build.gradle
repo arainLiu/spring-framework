@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.1.21.BUILD-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api(project(":spring-core"))
+    api(project(":spring-context"))
+    optional(project(":spring-aop"))
+    optional(project(":spring-beans"))
+    optional(project(":spring-context"))
+    optional(project(":spring-jdbc"))
+    optional(project(":spring-orm"))
+    optional(project(":spring-tx"))
+    optional(project(":spring-web"))
+    optional(project(":spring-webmvc"))
+    optional(project(":spring-websocket"))
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
