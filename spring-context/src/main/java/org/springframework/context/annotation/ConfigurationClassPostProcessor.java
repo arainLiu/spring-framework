@@ -66,6 +66,12 @@ import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 
 /**
+ * 此类是一个后置处理器的类，主要功能是参与BeanFactory的建造，主要功能如下
+ * 1、解析加了@Configuration的配置类
+ * 2、解析@ComponentScan扫描的包
+ * 3、解析@ComponentScans扫描的包
+ * 4、解析@Import注解
+ *
  * {@link BeanFactoryPostProcessor} used for bootstrapping processing of
  * {@link Configuration @Configuration} classes.
  *
@@ -88,6 +94,8 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
 		PriorityOrdered, ResourceLoaderAware, BeanClassLoaderAware, EnvironmentAware {
 
 	/**
+	 * 使用类的全限定名作为bean的默认生成策略
+	 *
 	 * A {@code BeanNameGenerator} using fully qualified class names as default bean names.
 	 * <p>This default for configuration-level import purposes may be overridden through
 	 * {@link #setBeanNameGenerator}. Note that the default for component scanning purposes
